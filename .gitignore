@@ -1,0 +1,8 @@
+.DS_Store
+logs
+tmp/*
+._*
+system/logs
+cache
+/nbproject/private/
+
