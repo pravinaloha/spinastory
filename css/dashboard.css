@@ -1,0 +1,822 @@
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+    position: relative;
+}
+
+.sub-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+    display: none;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 51px;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        display: block;
+        padding: 20px;
+        overflow-x: hidden;
+        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        background-color: #f5f5f5;
+        border-right: 1px solid #eee;
+    }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+    margin-right: -21px; /* 20px padding + 1px border */
+    margin-bottom: 20px;
+    margin-left: -20px;
+}
+.nav-sidebar > li > a {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.nav-sidebar > .active > a {
+    color: #fff;
+    background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+    padding: 20px;
+}
+@media (min-width: 768px) {
+    .main {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}
+.main .page-header {
+    margin-top: 0;
+}
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.placeholders h4 {
+    margin-bottom: 0;
+}
+.placeholder {
+    margin-bottom: 20px;
+}
+.placeholder img {
+    display: inline-block;
+    border-radius: 50%;
+}
+.navbar-inverse{
+    background-color: #d58512;
+}
+.navbar-inverse .navbar-brand{
+    color: #ffffff;
+}
+.navbar-inverse .navbar-nav > li > a{
+    color: #ffffff;
+}
+.navbar-inverse{
+    border-color: #d58512;
+}
+.nav-sidebar > .active > a{
+    background-color: #d58512;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
+    border-color: #d58512;
+}
+.user_image{
+    width: 130px;
+}
+
+.user_image img{
+    width: 80px;
+    height:80px;
+}
+.user_info span{
+    color: #428bca;
+    font-size: 14pt;
+    font-weight: bold;
+}
+.user_info p{
+    margin-top: 10px;
+}
+
+.user_info div{
+    margin-top: 10px;
+    background: url(../images/clock1.png) no-repeat;
+    padding-left: 20px;
+    color: #adadad;
+}
+
+.user_edit div{
+    margin-top: 10px;
+    background: url(../images/edit.jpeg) no-repeat;
+    padding-left: 25px;
+    color: #adadad;
+}
+.story_like div{
+    margin-top: 10px;
+    background: url(../images/bookmark.jpeg) no-repeat;
+    padding-left: 25px;
+    color: #adadad;
+    height: 30px;
+    width: 20px;
+}
+
+.user_stories .decide_latter{
+    background: url(../images/book.jpeg) no-repeat;
+    padding-left: 25px;
+}
+.user_stories div{
+    margin-top: 10px;
+    color: #adadad;
+}
+.story_info div{
+    color: #ADADAD;
+    margin-top: 10px;
+}
+.story_info span{
+    color: #428bca;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+
+/* Notification CSS Start*/
+
+#notification {
+    padding: 0px !important;
+    position:fixed;
+    top:51px;
+    right:10px;
+    width:260px;
+    z-index:105;
+    text-align:right;
+    font-weight:normal;
+    font-size:14px;
+    font-weight:bold;
+    color:white;
+    background-color:#D58512;
+}
+
+#notification a {
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.notification-bubble{
+    background: url("../images/notification-bg-clear.png") no-repeat scroll center center #F56C7E;
+    border-radius: 9px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.17) inset, 0 1px 1px rgba(0, 0, 0, 0.2);
+    color: #FFFFFF;
+    cursor: pointer;
+    display: none;
+    font-size: 9px;
+    font-weight: bold;
+    height: 18px;
+    line-height: 18px;
+    position: absolute;
+    right: -17px;
+    text-align: center;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+    top: 17px;
+    width: 18px;
+    background-color: #7AD2F4;
+    display: inline;
+}
+.noti_image{
+    width: 45px;
+    height: 45px;
+    float: left;
+    margin-top: 5px;
+}
+.noti_image img{
+    width: 35px;
+    height: 35px;
+}
+.my_notifications{
+    float: left;
+    margin: 2px;
+    padding: 2px;
+    text-align: left;
+    width: 180px;
+    font-size: 10px;
+    font-weight: normal;
+}
+.noti_delete{
+    background: url("../images/delete.gif") no-repeat scroll center center #F56C7E;
+    width: 16px;
+    height: 16px;
+    float: right;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.cf{
+    clear: both;
+}
+
+.scroll_me{
+    overflow-y: scroll;
+    height: 350px;
+}
+.show_all_notifications {
+    background-color: #D58512;
+    font-size: 12px;
+    font-weight: bold;
+    height: 23px;
+    position: fixed;
+    right: 23px;
+    text-align: center;
+    top: 387px;
+    width: 247px;
+    z-index: 205;
+    cursor: pointer;
+
+}
+.show_all_notifications a{
+    color: #fff;
+    font-size: 11px;
+}
+
+.notifications_Request{
+    border-bottom:1px solid #f7ecb5; 
+}
+
+/* End of notification css*/
+/* Start of friend css*/
+
+/* Notification CSS Start*/
+
+#friend {
+    padding: 0px !important;
+    position:fixed;
+    top:51px;
+    right:20px;
+    width:260px;
+    z-index:105;
+    text-align:right;
+    font-weight:normal;
+    font-size:14px;
+    font-weight:bold;
+    color:white;
+    background-color:#D58512;
+}
+
+#friend a {
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.friend-bubble{
+    background: url("../images/notification-bg-clear.png") no-repeat scroll center center #F56C7E;
+    border-radius: 9px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.17) inset, 0 1px 1px rgba(0, 0, 0, 0.2);
+    color: #FFFFFF;
+    cursor: pointer;
+    display: none;
+    font-size: 9px;
+    font-weight: bold;
+    height: 18px;
+    line-height: 18px;
+    position: absolute;
+    right: -17px;
+    text-align: center;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+    top: 17px;
+    width: 18px;
+    background-color: greenyellow;
+    display: inline;
+}
+
+.friend_image{
+    width: 45px;
+    height: 45px;
+    float: left;
+    margin-top: 5px;
+}
+.friend_image img{
+    width: 35px;
+    height: 35px;
+}
+.my_friends{
+    float: left;
+    margin: 2px;
+    padding: 2px;
+    text-align: left;
+    width: 180px;
+    font-size: 10px;
+    font-weight: normal;
+}
+.friends_delete{
+    background: url("../images/delete.gif") no-repeat scroll center center #F56C7E;
+    width: 16px;
+    height: 16px;
+    float: right;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.friends_scroll_me{
+    overflow-y: scroll;
+    height: 350px;
+}
+
+.friend_Request button{
+    margin-right: 10px;
+}
+.friend_Request{
+    border-bottom:1px solid #f7ecb5; 
+}
+
+.show_all_friends {
+    background-color: #D58512;
+    font-size: 12px;
+    font-weight: bold;
+    height: 23px;
+    position: fixed;
+    right: 23px;
+    text-align: center;
+    top: 387px;
+    width: 247px;
+    z-index: 205;
+    cursor: pointer;
+
+}
+.show_all_friends a{
+    color: #fff;
+    font-size: 11px;
+}
+
+/* End of friend css*/
+
+table{
+    border:1px solid #DDDDDD;
+}
+.div_header{
+    background: none repeat scroll 0 0 #D8DFEA;
+    border: 1px solid #D8DFEA;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: #493333;
+    font-size: 22px !important;
+    font-weight: bold;
+    height: 50px;
+    padding: 7px 5px 5px 18px;
+    width: 300px;
+}
+.div_footer{
+    background: none repeat scroll 0 0 #D8DFEA;
+    border: 1px solid #D8DFEA;
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius: 4px;
+    color: #FFFFFF;
+    font-size: 22px !important;
+    font-weight: bold;
+    height: 50px;
+    padding: 7px 5px 5px 18px;
+    width: 300px;
+    top:0px;
+}
+
+.accept_btn{
+    background: url("../images/accept.jpg") no-repeat scroll center center #F56C7E;
+    width: 105px;
+    height: 30px;
+    cursor: pointer;
+    margin: 5px; 
+}
+.reject_btn{
+    background: url("../images/reject.jpg") no-repeat scroll center center #F56C7E;
+    width: 105px;
+    height: 30px;
+    cursor: pointer;
+    margin: 5px; 
+}
+
+.navbar-right li{
+    margin-right: 20px;
+}
+
+.loading_image{
+    display: none;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+
+.midium_title{
+    font-size: 15px !important;
+}
+.date_time{
+    font-size: 12px !important;
+}
+
+.top_header_bar{
+    width: 100%;
+    position: relative;
+}
+
+.top_header_bar .sorter button{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color:#D8DFEA;
+    border-color:#D8DFEA;
+    color:#493333;
+    font-weight:bold;
+}
+.top_header_bar .sorter{
+    position: absolute;
+    right: 0px;
+    bottom:0px;
+}
+.bottom_footer_bar{
+    width: 100%;
+    height:40px;
+    position: relative;
+    background: #D8DFEA;
+    color:#428BCE;
+    font-weight:bold;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 40px;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-bottom: 60px;
+
+}
+
+.bottom_footer_bar .loading_more{
+    background: #D8DFEA url('../images/loading_more.gif') no-repeat;
+    width: 100px;
+    height:40px;
+    display: none;
+}
+#page_count{
+    display:none;
+}
+
+.pager{
+    display:none;
+}
+
+.search_box{
+    position: absolute;
+    right: 400px;
+    top: 14px;
+}
+.search_box button{
+    line-height: 1.14;
+    background: #3F85C5;
+    border-color:#3F85C5;
+    color:#fff;
+}
+.search_box input{
+    height: 30px;
+}
+.hide{
+    display: none;
+}
+
+.add_friend{
+    bottom: 0;
+    position: absolute;
+    right: 166px;
+}
+.add_friend button{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    color:#ffffff;
+    font-weight:bold;
+}
+
+.user_invite {
+    text-align: right;
+}
+
+.user_invite button{
+    margin-top: 20px;
+    font-weight: bold;
+    margin-right: 30px;
+}
+.spin_message{
+    position: relative;
+}
+.spin_message_show{
+    height: 50px;
+    position: absolute;
+    right: 220px;
+    top: 35px;
+    width:500px;
+}
+.spin_error{
+    border-color:#D2691E;
+    color:red;
+}
+
+.spin_success{
+    border-color:#67b168;
+    color:#67b168;
+}
+.spin_header_message{
+    border:1px solid #DDDDDD;
+    border-radius: 13px;
+    height: 50px;
+    left: 30%;
+    position: absolute;
+    top: 56px;
+    width: 490px;
+    padding: 13px;
+    overflow: hidden;
+    font-size: 14px;
+    background: #fff;
+}
+
+#story {
+    padding: 0px !important;
+    position:fixed;
+    top:51px;
+    right:70px;
+    width:260px;
+    z-index:105;
+    text-align:right;
+    font-weight:normal;
+    font-size:14px;
+    font-weight:bold;
+    color:white;
+    background-color:#D58512;
+}
+
+#story a {
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.story-bubble{
+    background: url("../images/notification-bg-clear.png") no-repeat scroll center center #F56C7E;
+    border-radius: 9px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.17) inset, 0 1px 1px rgba(0, 0, 0, 0.2);
+    color: #FFFFFF;
+    cursor: pointer;
+    display: none;
+    font-size: 9px;
+    font-weight: bold;
+    height: 18px;
+    line-height: 18px;
+    position: absolute;
+    right: -13px;
+    text-align: center;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+    top: 17px;
+    width: 18px;
+    background-color: yellowgreen;
+    display: inline;
+}
+
+
+.story_table{
+    min-height:400px;
+    height:400px;
+}
+
+.story_table .add_story{
+    width: 40%;
+}
+
+.story_table .story_partition{
+    width: 9%;
+}
+
+.story_table .suggesstion_list{
+    width: 48%;
+}
+
+.story_table .suggesion_list_table{
+    height:400px;
+}
+
+.story_table .suggest_title{
+    background: none repeat scroll 0 0 #D8DFEA;
+    border: 1px solid #D8DFEA;
+    border-radius: 27px;
+    height: 338px;
+    margin: 1px;
+    padding: 33px;
+}
+
+.bl{
+    border-left:1px solid #DDDDDD;
+}
+
+.br{
+    border-right:1px solid #DDDDDD;
+}
+
+.bt{
+    border-top:1px solid #DDDDDD;
+}
+
+.bb{
+    border-bottom:1px solid #DDDDDD;
+}
+
+.friend_info td{
+    padding-left: 15px !important;
+}
+
+.golden_pen{
+    background: url(../images/edit.jpeg) no-repeat;
+    height: 20px;
+    padding-left: 25px;
+    width: 60px;
+}
+.td_small{
+    width:100px;
+}
+
+.td_mid{
+    width:200px;
+}
+
+.td_large{
+    width:500px;
+}
+
+.td_xl{
+    width:900px;
+}
+.spin_hand{
+    background: url(../images/hand.jpeg) no-repeat;
+    height: 40px;
+    margin-left: 80px;
+    margin-top: 20px;
+    width: 40px; 
+}
+.spin_here{
+    background: url(../images/spin.jpeg) no-repeat;
+    height: 77px;
+    margin-left: 20px;
+    width: 77px;
+    cursor: pointer;
+}
+
+.fl{
+    float: left;
+}
+
+.fr{
+    float:right;
+}
+
+.cf{
+    clear: both !important;
+}
+
+.add_new_story_form .suggest_title_ok{
+    margin-left: 128px;
+    margin-top: 21px;
+    width: 77px;
+}
+.add_new_story_form #storytitlesuggession{
+    margin-left: 34px;
+    width: 233px;
+}
+.add_new_story_form select{
+    height: 33px;
+    width: 233px;
+    padding-top: 4px;
+}
+
+.suggest_story .story_option{
+    margin-left: 30%;
+}
+.suggest_story p{
+    color: #adadad;
+    font-size:16px;
+    text-align: center;
+    margin-top:5px;
+}
+.suggest_story span{
+    color: #adadad;
+    font-size:16px;
+    text-align: center;
+    margin-top:5px;
+    line-height: 35px;
+    margin-left: 3px;
+    text-align: left;
+}
+
+.story_suggesion_list{
+    border-radius: 5px;
+    height: 240px;
+    overflow-x: scroll;
+    width: auto;
+    background: #ffffff;
+    border: 1px solid #DDDDDD;
+}
+.story_suggesion_list td{
+    cursor: pointer;
+}
+
+.my_notifications span{
+    color:#fff !important;
+    font-weight: bold !important;
+    font-size: 12px;
+}
+.accept_button{
+    margin-bottom: 4px;
+}
+.story .accept_button{
+    margin-right: 8px;
+}
+
+
+.add_story_table .story_header{
+    width: 100%;
+    position: relative;
+}
+
+.story_header div{
+    float: left;
+    height:60px;
+    line-height: 60px;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+.story_header label{
+    color:#42A4E8;
+}
+.story_header .author1_status{
+    width: 7px;
+    height: 50px;
+    margin-top: 5px;
+    margin-left: -5px;
+    background: #D2691E;
+}
+.story_bottom{
+    margin-top: 20px;
+}
+.story_body textarea{
+    color:#D2691E;
+}
+
+.complete_story_invite{
+    border: 1px solid #dddddd;
+    display: inline-block;
+    padding: 10px 10px 30px 10px;
+}
+
+.complete_story_invite div{
+    float: left;
+    width: 100%;
+    margin-top: 28px;
+    margin-left: 20px;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary{
+    background-color: #D58512;
+    border-color: #D58512;
+    color: #FFFFFF;
+}
+
+.publish_buttons{
+    margin-top: 50px !important;
+}
+
+.complete_story_invite select{
+    height: 34px;
+    width: 220px;
+    padding-top:4px;
+}
+
+.friend_suggesion_list{
+    height: 500px;
+}
